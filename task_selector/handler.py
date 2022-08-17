@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 from pydantic import parse_obj_as, ValidationError
 from .models import Task
 from .selector import select_tasks
@@ -14,5 +14,9 @@ class Handler:
             print(e.errors())
             return []
 
-    def perform_selection(self) -> List[Task]:
-        return select_tasks(self.tasks)
+    def perform_selection(self) -> Dict:
+        selected, not_selected = select_tasks(self.tasks)
+        return {
+            'selected': selected,
+            'not_selected': not_selected
+        }
