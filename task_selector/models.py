@@ -1,7 +1,7 @@
 from typing import List
-from pydantic import BaseModel
+from pydantic import BaseModel, NonNegativeFloat, constr
 
 class Task(BaseModel):
-    name: str
+    name: constr(min_length=1)
     resources: List[str] = []
-    profit: float
+    profit: NonNegativeFloat

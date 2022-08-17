@@ -14,7 +14,7 @@ class Handler:
             print(e.errors())
             return []
 
-    def perform_selection(self) -> Dict:
+    def perform_selection(self) -> Dict[str, List[Task]]:
         selected, not_selected = select_tasks(self.tasks)
         return {
             'selected': selected,
