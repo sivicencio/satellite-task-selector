@@ -142,9 +142,47 @@
             "profit": 100.5
         }
     ],
-    "invalid_tasks_empty_name": [],
-    "invalid_tasks_no_text_name": [],
-    "invalid_tasks_text_profit": [],
-    "invalid_tasks_negative_profit": [],
-    "invalid_tasks_text_resources": []
+    "invalid_tasks_empty_name": [
+        {
+            "name": "",
+            "resources": [
+                "camera"
+            ],
+            "profit": 9.2
+        }
+    ],
+    "invalid_tasks_no_text_name": [
+        {
+            "name": [],
+            "resources": [
+                "camera"
+            ],
+            "profit": 9.2
+        }
+    ],
+    "invalid_tasks_text_profit": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera"
+            ],
+            "profit": "some profit"
+        }
+    ],
+    "invalid_tasks_negative_profit": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera"
+            ],
+            "profit": -2.5
+        }
+    ],
+    "invalid_tasks_text_resources": [
+        {
+            "name": "capture for client 1098",
+            "resources": "some resources",
+            "profit": 9.2
+        }
+    ]
 }
