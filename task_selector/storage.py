@@ -30,7 +30,10 @@ class TaskStorage:
 
     def add_selected_tasks(self, tasks: List[Task]) -> int:
         return self.__add_tasks(tasks, KEYS['selected'], MAX_ITEMS['selected'])
-    
+
+    def clear_selected_tasks(self) -> bool:
+        return self.__clear_tasks(KEYS['selected'])
+
     def __get_tasks(self, key: str) -> List[Task]:
         tasks_in_json = self.storage.lrange(key, 0, -1)
         return list(map(lambda task_json: Task.parse_raw(task_json), tasks_in_json))
