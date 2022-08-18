@@ -25,6 +25,9 @@ class TaskStorage:
     def clear_standby_tasks(self) -> bool:
         return self.__clear_tasks(KEYS['standby'])
 
+    def get_selected_tasks(self) -> List[Task]:
+        return self.__get_tasks(KEYS['selected'])
+
     def add_selected_tasks(self, tasks: List[Task]) -> int:
         return self.__add_tasks(tasks, KEYS['selected'], MAX_ITEMS['selected'])
     
