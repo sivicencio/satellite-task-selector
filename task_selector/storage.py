@@ -15,7 +15,7 @@ MAX_ITEMS = {
 
 class TaskStorage:
     def __init__(self):
-        redis_url = os.getenv('REDIS_TLS_URL', 'redis://localhost')
+        redis_url = os.getenv('REDIS_URL', 'redis://localhost')
         self.storage = redis.Redis.from_url(redis_url, decode_responses=True)
 
     def get_standby_tasks(self) -> List[Task]:
