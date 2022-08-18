@@ -30,6 +30,10 @@ class Handler:
         if len(not_selected) > 0:
             self.storage.add_standby_tasks(not_selected)
 
+        # Persist selected tasks
+        if len(selected) > 0:
+            self.storage.add_selected_tasks(selected)
+
         return {
             'selected': selected,
             'not_selected': not_selected

@@ -3,10 +3,12 @@ from typing import List
 from .models import Task
 
 KEYS = {
+    'selected': 'tasks:selected',
     'standby': 'tasks:standby'
 }
 
 MAX_ITEMS = {
+    'selected': 100,
     'standby': 100
 }
 
@@ -22,6 +24,9 @@ class TaskStorage:
 
     def clear_standby_tasks(self) -> bool:
         return self.__clear_tasks(KEYS['standby'])
+
+    def add_selected_tasks(self, tasks: List[Task]) -> int:
+        return self.__add_tasks(tasks, KEYS['selected'], MAX_ITEMS['selected'])
     
     def __get_tasks(self, key: str) -> List[Task]:
         tasks_in_json = self.storage.lrange(key, 0, -1)
