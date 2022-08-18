@@ -6,8 +6,9 @@ from .models import Task
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 def select_tasks(tasks: List[Task]) -> Tuple[List[Task], List[Task]]:
-    logging.info(f'Selecting higher profit tasks from {len(tasks)} tasks')
-    st = time.time()
+    # pylint: disable=too-many-locals, too-many-branches
+    logging.info('Selecting higher profit tasks from %s tasks', len(tasks))
+    start_time = time.time()
 
     # Step 1: Group tasks based on resources compatibility
 
@@ -77,9 +78,10 @@ def select_tasks(tasks: List[Task]) -> Tuple[List[Task], List[Task]]:
             assigned_tasks = selected_tasks if i == selected_group_index else not_selected_tasks
             assigned_tasks.append(tasks[j])
 
-    et = time.time()
-    elapsed_time = et - st
-    logging.info(f'Execution time: {elapsed_time} seconds')
-    logging.info(f'Result: {len(selected_tasks)} tasks selected and {len(not_selected_tasks)} not selected')
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    logging.info('Execution time: %s seconds', elapsed_time)
+    logging.info('Result: %s tasks selected and %s not selected',
+        len(selected_tasks), len(not_selected_tasks))
 
     return selected_tasks, not_selected_tasks
