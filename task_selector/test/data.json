@@ -1,0 +1,150 @@
+{
+    "empty": [],
+    "valid_all_compatible_different_resources_tasks": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera"
+            ],
+            "profit": 9.2
+        },
+        {
+            "name": "clean satellite disk",
+            "resources": [
+                "disk"
+            ],
+            "profit": 0.4
+        },
+        {
+            "name": "upgrade to v2.1",
+            "resources": [
+                "proc"
+            ],
+            "profit": 2.9
+        }
+    ],
+    "valid_all_compatible_no_resources_tasks": [
+        {
+            "name": "capture for client 1098",
+            "profit": 9.2
+        },
+        {
+            "name": "clean satellite disk",
+            "profit": 0.4
+        },
+        {
+            "name": "upgrade to v2.1",
+            "profit": 2.9
+        }
+    ],
+    "valid_two_compatible_tasks_profit_incompatible": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera",
+                "disk",
+                "proc"
+            ],
+            "profit": 9.2
+        },
+        {
+            "name": "clean satellite disk",
+            "resources": [
+                "disk"
+            ],
+            "profit": 0.4
+        },
+        {
+            "name": "upgrade to v2.1",
+            "resources": [
+                "proc"
+            ],
+            "profit": 2.9
+        }
+    ],
+    "valid_two_compatible_tasks_profit_compatibles": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera",
+                "disk",
+                "proc"
+            ],
+            "profit": 9.2
+        },
+        {
+            "name": "clean satellite disk",
+            "resources": [
+                "disk"
+            ],
+            "profit": 6.4
+        },
+        {
+            "name": "upgrade to v2.1",
+            "resources": [
+                "proc"
+            ],
+            "profit": 2.9
+        }
+    ],
+    "valid_one_compatible_empty_resources_tasks": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera",
+                "disk",
+                "proc"
+            ],
+            "profit": 9.2
+        },
+        {
+            "name": "clean satellite disk",
+            "resources": [
+                "disk"
+            ],
+            "profit": 0.4
+        },
+        {
+            "name": "empty resources",
+            "resources": [],
+            "profit": 0.4
+        },
+        {
+            "name": "upgrade to v2.1",
+            "resources": [
+                "proc"
+            ],
+            "profit": 2.9
+        }
+    ],
+    "valid_all_incompatible_tasks": [
+        {
+            "name": "capture for client 1098",
+            "resources": [
+                "camera"
+            ],
+            "profit": 9.2
+        },
+        {
+            "name": "clean satellite disk",
+            "resources": [
+                "disk",
+                "camera"
+            ],
+            "profit": 0.4
+        },
+        {
+            "name": "upgrade to v2.1",
+            "resources": [
+                "proc",
+                "camera"
+            ],
+            "profit": 100.5
+        }
+    ],
+    "invalid_tasks_empty_name": [],
+    "invalid_tasks_no_text_name": [],
+    "invalid_tasks_text_profit": [],
+    "invalid_tasks_negative_profit": [],
+    "invalid_tasks_text_resources": []
+}
