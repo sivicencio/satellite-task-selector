@@ -1,5 +1,5 @@
-import redis
 from typing import List
+import redis
 from .models import Task
 
 KEYS = {
@@ -15,7 +15,7 @@ MAX_ITEMS = {
 class TaskStorage:
     def __init__(self):
         self.storage = redis.Redis(decode_responses=True)
-    
+
     def get_standby_tasks(self) -> List[Task]:
         return self.__get_tasks(KEYS['standby'])
 
@@ -36,7 +36,7 @@ class TaskStorage:
 
     def __get_tasks(self, key: str) -> List[Task]:
         tasks_in_json = self.storage.lrange(key, 0, -1)
-        return list(map(lambda task_json: Task.parse_raw(task_json), tasks_in_json))
+        return list(map(Task.parse_raw, tasks_in_json))
 
     def __add_tasks(self, tasks: List[Task], key: str, max_items: int) -> int:
         for task in tasks:
@@ -46,4 +46,4 @@ class TaskStorage:
 
     def __clear_tasks(self, key: str) -> bool:
         deleted_keys_count = self.storage.delete(key)
-        return True if deleted_keys_count in [0, 1] else False
+        return deleted_keys_count in [0, 1]

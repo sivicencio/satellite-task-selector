@@ -1,5 +1,5 @@
-from fastapi import APIRouter, status
 from typing import Dict, List
+from fastapi import APIRouter, status
 from task_selector.handler import Handler
 from task_selector.models import Task
 from task_selector.storage import TaskStorage
